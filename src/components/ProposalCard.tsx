@@ -24,21 +24,12 @@ const ProposalCard = () => {
 
   if (accepted) {
     return (
-      <div className="relative z-10 flex flex-col items-center justify-center gap-8 p-8 animate-celebration">
-        <div className="text-8xl animate-pulse-heart">💖</div>
-        <h1 className="font-romantic text-5xl md:text-7xl text-center text-gradient-romantic">
-          Yay! I love you, Riya!
-        </h1>
-        <p className="text-xl md:text-2xl text-muted-foreground text-center">
-          Can't wait to be your Valentine! 💕
-        </p>
-        <div className="flex gap-4 text-4xl">
-          <span className="animate-pulse-heart" style={{ animationDelay: '0s' }}>💐</span>
-          <span className="animate-pulse-heart" style={{ animationDelay: '0.2s' }}>🌹</span>
-          <span className="animate-pulse-heart" style={{ animationDelay: '0.4s' }}>💝</span>
-          <span className="animate-pulse-heart" style={{ animationDelay: '0.6s' }}>🌹</span>
-          <span className="animate-pulse-heart" style={{ animationDelay: '0.8s' }}>💐</span>
-        </div>
+      <div className="relative z-10 flex flex-col items-center justify-center gap-8 p-8">
+        <img 
+          src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcHJvZ3JhbW1pbmcxMjM0NTY3ODkwYWJjZGVmZ2hpamtsbW5vcHFycw/xT9IgG50Fb7Mi0prBC/giphy.gif" 
+          alt="Celebration" 
+          className="w-full max-w-md rounded-lg shadow-xl"
+        />
       </div>
     );
   }
@@ -54,9 +45,6 @@ const ProposalCard = () => {
         Riya, Will you be my Valentine?
       </h1>
       
-      <p className="text-lg text-muted-foreground text-center">
-        Please say yes... pretty please? 🥺
-      </p>
       
       <div className="flex flex-wrap items-center justify-center gap-6 mt-8 relative w-full min-h-[120px]">
         <Button
