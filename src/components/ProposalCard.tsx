@@ -26,7 +26,7 @@ const ProposalCard = () => {
     return (
       <div className="relative z-10 flex flex-col items-center justify-center gap-8 p-8">
         <img 
-          src="https://media.giphy.com/media/l4pTdcifPZLpDjL1e/giphy.gif" 
+          src="https://media.giphy.com/media/artj92V8o75VPL7AeQ/giphy.gif" 
           alt="Celebration" 
           className="w-full max-w-md rounded-lg shadow-xl"
         />
