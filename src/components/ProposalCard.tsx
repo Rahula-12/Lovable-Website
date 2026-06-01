@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 const ProposalCard = () => {
   const [accepted, setAccepted] = useState(false);
   const [noPosition, setNoPosition] = useState({ x: 0, y: 0 });
+
   const noButtonRef = useRef<HTMLButtonElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -21,6 +22,32 @@ const ProposalCard = () => {
 
     setNoPosition({ x: newX, y: newY });
   }, []);
+
+  const handleYesClick = async () => {
+    try {
+      const response = await fetch(
+        'https://partner-backend-izpu.onrender.com/send-notification',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({}),
+        }
+      );
+
+      const result = await response.json();
+
+      console.log('Notification Result:', result);
+
+      setAccepted(true);
+    } catch (error) {
+      console.error('Failed to send notification:', error);
+
+      // Still show success screen
+      setAccepted(true);
+    }
+  };
 
   if (accepted) {
     return (
@@ -45,12 +72,11 @@ const ProposalCard = () => {
         Riya, Will you be my Valentine?
       </h1>
 
-
       <div className="flex flex-wrap items-center justify-center gap-6 mt-8 relative w-full min-h-[120px]">
         <Button
           variant="romantic"
           size="xl"
-          onClick={() => setAccepted(true)}
+          onClick={handleYesClick}
           className="z-10"
         >
           Yes! 💖
